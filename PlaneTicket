@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+class PlaneTicket
+{
+   // properties
+   public string Origin { get; set; }
+   public string Destination { get; set: }
+   public float Cost { get; set; }
+   public string Currency { get; set; }
+   public float Convert { get; set; }
+
+   // method
+   public void PrintSummary()
+   {
+      Console.WriteLine("Origin: {0}", Origin);
+      Console.WriteLine("Destination: {0}", Destination);
+      Console.WriteLine("Cost: {0} {1}", Cost, Currency);
+       
+      if (Currency== "IDR")
+      {
+        Convert = Cost / 15000;
+        Currency = "USD";
+      }
+       else if (Currency== "USD")
+      {
+       Convert = Cost * 15000;
+       Currency = " IDR";
+      }
+      Console.WriteLine("Convert to {0}; {1}", Currency, Convert);
+   }
+}
+    
